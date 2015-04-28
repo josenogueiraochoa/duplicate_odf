@@ -7,6 +7,14 @@
 # Os documentos finais serán gardados no directorio «finais»
 # comprobamos se existe, en caso contrario, é creado.
 
+######################################################################
+### IMAGEMAGICK
+######################################################################
+
+convert -resize x136 -background white -gravity west -extent 743x136 presidencia_cor.png resize_presidencia.png
+
+######################################################################
+
 if [ ! -d finais ]; then
 	mkdir finais
 fi
