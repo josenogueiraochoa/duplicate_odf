@@ -28,11 +28,21 @@ unzip -o $1 "Pictures/*"
 ls Pictures/ > files.txt
 NOME=$(head files.txt)
 
-if [ $2 == 1 ]; then
+case "$2" in
+
+1) 
 	NOME=$(head -1 files.txt)
-else
-	NOME=$(head -2 files.txt | tail -1 files.txt)
-fi
+	;;
+
+2)
+	NOME=$(head -2 files.txt | tail -1)
+	;;
+
+3)
+	NOME=$(head -3 files.txt | tail -1)
+	;;
+esac
+
 
 # Agora temos que percorrer as imaxes do cartafol Logos e crear un novo ODF con cada unha delas
 for image in logos/*
